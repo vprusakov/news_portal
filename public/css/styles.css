@@ -60,6 +60,15 @@ body {
   background-color: #fff;
 }
 
+.link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #d2dfe8;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #08c;
+}
+
 .entry__read-link {
   position: absolute;
   left: 0;

@@ -19,10 +19,10 @@ class Nav
     }
 
     private function createFeedLink() {
-        return '<a href="/" class="nav-link-to-feed">К ленте новостей</a>';
+        return '<a href="/" class="link">К ленте новостей</a>';
     }
 
     private function createManagerLink() {
-        return '<a href="/manager" class="nav-link-to-manager">Админка</a>';
+        return '<a href="/manager" class="nav-link-to-manager link">Админка</a>';
     }
 }
