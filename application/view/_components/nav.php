@@ -23,10 +23,10 @@ class Nav
     }
 
     private function createManagerLink() {
-        return '<a href="/manager" class="nav-link-to-manager link">Админка</a>';
+        return '<a href="/manager" class="link floated-right">Админка</a>';
     }
 
     private function createAddNewsLink() {
-        return '<a href="/manager/add" class="link">Добавить</a>';
+        return '<a href="/manager/add" class="link floated-right">Добавить</a>';
     }
 }

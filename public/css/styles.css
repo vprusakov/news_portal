@@ -43,10 +43,6 @@ body {
   background-color: #bdd7e8;
 }
 
-.nav-link-to-manager {
-  float: right;
-}
-
 .feed {
 }
 
@@ -67,6 +63,10 @@ body {
   border-radius: 999px;
   text-decoration: none;
   color: #08c;
+}
+
+.floated-right {
+  float: right;
 }
 
 .entry__read-link {
