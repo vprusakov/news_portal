@@ -23,6 +23,6 @@ class Nav
     }
 
     private function createManagerLink() {
-        return '<a href="manager/" class="nav-link-to-manager">Админка</a>';
+        return '<a href="/manager" class="nav-link-to-manager">Админка</a>';
     }
 }
