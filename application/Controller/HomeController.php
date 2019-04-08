@@ -5,8 +5,8 @@ require APP . 'view/_components/Nav.php';
 
 class HomeController
 {
-    private $News = null;
     private $Nav = null;
+    private $News = null;
 
     public function __construct() {
         $this->News = new News();
