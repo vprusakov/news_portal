@@ -1,20 +1,23 @@
 <?php
 
 require APP . "Model/News.php";
+require APP . 'view/_components/Nav.php';
 
 class HomeController
 {
     private $News = null;
+    private $Nav = null;
 
     public function __construct() {
         $this->News = new News();
+        $this->Nav = new Nav();
     }
 
     public function index()
     {
         require APP . 'view/_templates/header.php';
-        require APP . 'view/_components/nav.php';
-        echo createNav('/');
+
+        echo $this->Nav->createNav('/');
 
         $news = $this->News->getAllNews();
         require APP . 'view/home/index.php';
@@ -24,8 +27,8 @@ class HomeController
 
     public function read($id) {
         require APP . 'view/_templates/header.php';
-        require APP . 'view/_components/nav.php';
-        echo createNav('/manager');
+
+        echo $this->Nav->createNav('/read');
 
         $news_entry = $this->News->getNewsEntryById($id)[0];
         require APP . 'view/home/read.php';
