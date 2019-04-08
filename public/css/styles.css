@@ -25,17 +25,8 @@ body {
 
 .nav {
   display: flow-root;
+  overflow: hidden;
   padding: 24px 0;
-}
-
-.nav-link-to-feed,
-.nav-link-to-manager {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #d2dfe8;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #08c;
 }
 
 .feed {
@@ -51,6 +42,11 @@ body {
   background-color: #fff;
 }
 
+.entry__header {
+  display: flow-root;
+  overflow: hidden;
+}
+
 .link {
   display: inline-block;
   padding: 8px 16px;
@@ -64,6 +60,15 @@ body {
   background-color: #bdd7e8;
 }
 
+.link--danger {
+  background-color: #e8d2d2;
+  color: #c00;
+}
+
+.link--danger:hover {
+  background-color: #e8c3bd;
+}
+
 .floated-right {
   float: right;
 }
@@ -74,4 +79,10 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
+}
+
+.entry__delete-link {
+  position: relative;
+  z-index: 2;
 }
