@@ -24,5 +24,9 @@ class ManagerController
         
         require APP . 'view/_templates/footer.php';
     }
-
+    
+    public function delete($id) {
+        $this->News->deleteNewsEntryById($id);
+        header('location: ' . URL . 'manager');
+    }
 }

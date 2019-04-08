@@ -22,5 +22,12 @@ class News extends Model
         $query = $this->db->prepare($sql);
         $query->execute();
         return $query->fetchAll();    
+    }
+    
+    public function deleteNewsEntryById($id) {
+        $sql = "DELETE FROM news WHERE id=$id";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();    
     } 
 }
