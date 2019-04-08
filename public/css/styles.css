@@ -46,3 +46,15 @@ body {
 .nav-link-to-manager {
   float: right;
 }
+
+.feed {
+}
+
+.feed__item {
+  margin-bottom: 24px;
+}
+
+.entry {
+  padding: 24px;
+  background-color: #fff;
+}
