@@ -55,6 +55,15 @@ body {
 }
 
 .entry {
+  position: relative;
   padding: 24px;
   background-color: #fff;
+}
+
+.entry__read-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }

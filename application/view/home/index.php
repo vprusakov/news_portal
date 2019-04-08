@@ -7,6 +7,7 @@
             <div class="entry__content">
                 <h2><?php echo $news_item->headline; ?></h2>
                 <p><?php echo $news_item->intro; ?></p>
+                <a href="home/read/<?php echo $news_item->id; ?>" class="entry__read-link" ></a>
             </div>
         </div>
     </div>
