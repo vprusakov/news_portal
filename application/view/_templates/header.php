@@ -7,7 +7,3 @@
     <link href="css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="feed__container">
-      <a href="/">Лента новостей</a>
-      <a href="/manager">Админка</a>
-    </div>
