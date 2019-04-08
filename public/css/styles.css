@@ -38,11 +38,6 @@ body {
   color: #08c;
 }
 
-.nav-link-to-feed:hover,
-.nav-link-to-manager:hover {
-  background-color: #bdd7e8;
-}
-
 .feed {
 }
 
@@ -63,6 +58,10 @@ body {
   border-radius: 999px;
   text-decoration: none;
   color: #08c;
+}
+
+.link:hover {
+  background-color: #bdd7e8;
 }
 
 .floated-right {
