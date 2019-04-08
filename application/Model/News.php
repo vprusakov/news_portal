@@ -16,4 +16,11 @@ class News extends Model
         // $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC ...
         return $query->fetchAll();
     }
+
+    public function getNewsEntryById($id) {
+        $sql = "SELECT id, headline, content FROM news WHERE id=$id";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();    
+    } 
 }
