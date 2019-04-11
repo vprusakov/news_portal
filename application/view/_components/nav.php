@@ -10,7 +10,8 @@ class Nav
                 return $this->createFeedLink() . $this->createAddNewsLink();
             case '/read':
                 return $this->createFeedLink() . $this->createManagerLink();
-
+            case '/manager/add':
+                return $this->cancelLink();
         }
     }
 
@@ -28,5 +29,9 @@ class Nav
 
     private function createAddNewsLink() {
         return '<a href="/manager/add" class="link floated-right">Добавить</a>';
+    }
+
+    private function cancelLink() {
+        return '<a href="/manager" class="link link--danger floated-right">Отмена</a>';
     }
 }
