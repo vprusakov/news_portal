@@ -43,4 +43,21 @@ class ManagerController
         $_POST = json_decode(file_get_contents("php://input"), true);
         $this->News->addNewsEntry($_POST['headline'], $_POST['intro'], $_POST['content']);
     }
+
+    public function edit($id) {
+        require APP . 'view/_templates/header.php';
+
+        echo $this->Nav->createNav('/manager/add');
+
+        $news_entry = $this->News->getNewsEntryById($id)[0];
+        require APP . 'view/manager/edit.php';
+        
+        require APP . 'view/_templates/footer.php';
+    }
+
+    public function update($id) {
+        $_POST = json_decode(file_get_contents("php://input"), true);
+        echo $_POST['content'];
+        $this->News->updateNewsEntryById($id, $_POST['headline'], $_POST['intro'], $_POST['content']);
+    }
 }
