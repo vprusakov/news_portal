@@ -29,4 +29,18 @@ class ManagerController
         $this->News->deleteNewsEntryById($id);
         header('location: ' . URL . 'manager');
     }
+
+    public function add() {
+        require APP . 'view/_templates/header.php';
+
+        echo $this->Nav->createNav('/manager/add');
+        require APP . 'view/manager/add.php';
+        
+        require APP . 'view/_templates/footer.php';
+    }
+
+    public function save() {
+        $_POST = json_decode(file_get_contents("php://input"), true);
+        $this->News->addNewsEntry($_POST['headline'], $_POST['intro'], $_POST['content']);
+    }
 }
