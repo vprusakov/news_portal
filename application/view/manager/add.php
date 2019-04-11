@@ -9,3 +9,4 @@
     </div>
 </div>
 <script src="/js/app.js"></script>
+<script>processEdits.init('/manager/save')</script>
