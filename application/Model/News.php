@@ -24,5 +24,11 @@ class News extends Model
         $sql = "DELETE FROM news WHERE id=$id";
         $query = $this->db->prepare($sql);
         $query->execute();
-    } 
+    }
+    
+    public function addNewsEntry($headline, $intro, $content) {
+        $sql = "INSERT INTO news (headline, intro, content) VALUES ('$headline', '$intro', '$content')";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+    }
 }
