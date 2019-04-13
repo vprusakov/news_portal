@@ -30,34 +30,41 @@ class ManagerController
         header('location: ' . URL . 'manager');
     }
 
-    public function add() {
-        require APP . 'view/_templates/header.php';
-
-        echo $this->Nav->createNav('/manager/add');
-        require APP . 'view/manager/add.php';
-        
-        require APP . 'view/_templates/footer.php';
-    }
-
     public function save() {
         $_POST = json_decode(file_get_contents("php://input"), true);
         $this->News->addNewsEntry($_POST['headline'], $_POST['intro'], $_POST['content']);
     }
 
-    public function edit($id) {
+    public function edit($id = -1) {
+
         require APP . 'view/_templates/header.php';
 
-        echo $this->Nav->createNav('/manager/add');
+        echo $this->Nav->createNav('/manager/edit');
 
-        $news_entry = $this->News->getNewsEntryById($id)[0];
+        $news_entry = null;
+
+        if ($id !== -1) {
+            $news_entry = $this->News->getNewsEntryById($id)[0];
+        } else {
+            $news_entry = new stdClass();
+            $news_entry->id = -1;
+            $news_entry->headline = 'Заголовок';
+            $news_entry->intro = '<p>Вступление</p>';
+            $news_entry->content = '<p>Текст</p>';
+        }
+
         require APP . 'view/manager/edit.php';
         
         require APP . 'view/_templates/footer.php';
     }
 
-    public function update($id) {
+    public function update($id = -1) {   
         $_POST = json_decode(file_get_contents("php://input"), true);
-        echo $_POST['content'];
-        $this->News->updateNewsEntryById($id, $_POST['headline'], $_POST['intro'], $_POST['content']);
+        if ($id == -1) {
+            echo $_POST['headline'];
+            $this->News->addNewsEntry($_POST['headline'], $_POST['intro'], $_POST['content']); 
+        } else {
+            $this->News->updateNewsEntryById($id, $_POST['headline'], $_POST['intro'], $_POST['content']);
+        }
     }
 }
