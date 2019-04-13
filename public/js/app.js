@@ -3,11 +3,11 @@ const processEdits = (function() {
   const editor = document.getElementById("editor");
 
   const settings = {
-    destUrl: ""
+    id: -1
   };
 
-  function init(destUrl) {
-    settings.destUrl = destUrl;
+  function init(id = -1) {
+    settings.id = id;
   }
 
   document.execCommand("defaultParagraphSeparator", true, "p");
@@ -22,7 +22,7 @@ const processEdits = (function() {
     "click",
     function(e) {
       e.preventDefault();
-      settings.destUrl && saveChanges(createDataObj());
+      saveChanges(createDataObj());
     },
     false
   );
@@ -41,7 +41,7 @@ const processEdits = (function() {
 
   function saveChanges(data) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", settings.destUrl, true);
+    xhr.open("POST", `/manager/update/${settings.id}`, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onload = function() {
       if (xhr.readyState === xhr.DONE) {
