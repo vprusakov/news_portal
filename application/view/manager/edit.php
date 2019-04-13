@@ -5,8 +5,8 @@
         <div data-name="content" contenteditable id="js-content"><?php echo $news_entry->content; ?></div>
     </div>
     <div class="entry__footer">
-        <a href="/manager/update/<?php echo $news_entry->id; ?>" class="link" id="js-save">Сохранить</a>
+        <a href="/manager/update/<?php isset($news_entry->id) ? $news_entry->id : ""; ?>" class="link" id="js-save">Сохранить</a>
     </div>
 </div>
 <script src="/js/app.js"></script>
-<script>processEdits.init('/manager/update/<?php echo $news_entry->id; ?>')</script>
+<script>processEdits.init(<?php echo $news_entry->id !== -1 ? $news_entry->id : ""; ?>)</script>
